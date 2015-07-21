@@ -10,7 +10,7 @@ m <- NULL
                 m <<- NULL
         }
         get <- function() x
-        setsolve <- function(mean) m <<- mean
+        setsolve <- function(solve) m <<- solve
         getsolve <- function() m
         list(set = set, get = get,
              setsolve = setsolve,
@@ -28,7 +28,7 @@ cacheSolve <- function(x, ...) {
                 return(m)
         }
         data <- x$get()
-        m <- mean(data, ...)
+        m <- solve(data, ...)
         x$setmean(m)
         m
 }
